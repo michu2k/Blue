@@ -1,7 +1,6 @@
 # Blue
 Theme for CMS Batflat
 
-[Img](./preview.png)
 ![Preview](./preview.png?raw=true)
 
 ## Version

@@ -330,12 +330,21 @@ aside {
 
 		.widget-social {
 			margin-top: 20px;
-			i {
-				color: $color-primary;
-				@include transition(color, .4s);
+
+			a {
+				margin-right: 12px;
+
+				i {
+					font-size: 18px;
+					color: $color-primary;
+					@include transition(color, .4s);
+
+				}
 
 				&:hover {
-					color: $color-secondary;
+					i {
+						color: $color-secondary;
+					}
 				}
 			}
 		}

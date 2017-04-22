@@ -3,7 +3,6 @@ Author: Michu2k
 Version: 2.1
 Template Name: Blue
 */
-
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 /*---------- 0. Basic ----------*/
 body {
@@ -267,12 +266,16 @@ aside .widget-container .widget-content ul > li > a:hover {
 aside .widget-container .widget-social {
   margin-top: 20px;
 }
-aside .widget-container .widget-social i {
+aside .widget-container .widget-social a {
+  margin-right: 12px;
+}
+aside .widget-container .widget-social a i {
+  font-size: 18px;
   color: #3e8fe0;
   -webkit-transition: color 0.4s;
   transition: color 0.4s;
 }
-aside .widget-container .widget-social i:hover {
+aside .widget-container .widget-social a:hover i {
   color: #000;
 }
 

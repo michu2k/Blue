@@ -1,6 +1,4 @@
 # Blue
-Simple theme for CMS Batflat
-
 ![Preview](./previewgithub.png?raw=true)
 
 ## Version
@@ -9,7 +7,7 @@ Simple theme for CMS Batflat
 ## Requirements
 Batflat 1.3.x
 
-## How to install ?
+## How to install
 1. Download this repository
 2. Unzip the downloaded files
 3. Move catalog with theme to the `/themes` 

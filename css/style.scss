@@ -69,7 +69,8 @@ a {
 	color: $main-color; 
 	@include transition(color, .4s);
 
-	&:hover, &:focus {
+	&:hover, 
+	&:focus {
 		color: $black-color;
 		text-decoration: none;
 	}	

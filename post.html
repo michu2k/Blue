@@ -1,6 +1,6 @@
 {template: inc/header.html}
 
-<header style="background-image: url('{$bat.theme}/img/blog-bg.jpg');">   
+<header class="header" style="background-image: url('{$bat.theme}/img/blog-bg.jpg');">   
     <div class="container">
         <div class="col-md-12">
             <h1 class="header-title">{$blog.title}</h1>
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="post-meta">
-                        <p>{$post.published_at}</p>  
+                        <p class="post-meta-item">{$post.published_at}</p>  
                     </div>    
 
                     <div class="post-content">

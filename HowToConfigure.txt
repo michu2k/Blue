@@ -2,7 +2,7 @@
 
 	Name: Blue
 	Author: Michu2k
-	Version: 2.1
+	Version: 2.2
 	Batflat: 1.3.X
 
 // How to install ?
@@ -30,7 +30,7 @@
 
 // Social icons
 
-	You can modify your social icons in the sidebar.
+	You can modify your social icons in the inc/social.html file.
 
 		<a href="#">
 			<i class="fa fa-facebook" aria-hidden="true"></i>
@@ -41,7 +41,20 @@
 
 	Icons: fontawesome.io/cheatsheet/
 
+// LangSwitcher
+
+	To enable langSwitcher in navigation open header.html and add code below before </ul>
+		<li class="langswitcher">{$langSwitcher}</li>
+
 // Changelog [PL only]
+
+	2.2
+	- Dodano nowy plik social.html
+	- Zaktualizowano style.scss [Mobile First, Spis treści, poprawki]
+	- Usunięto LangSwitcher z menu
+	- Poprawiono profil autora w postach
+	- Lekkie zmiany wizualne
+	- Zaktualizowano preview.png
 	
 	2.1
 	- Zgodność z Batflat 1.3.X

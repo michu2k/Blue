@@ -1,249 +1,270 @@
-/*
-Author: Michu2k
-Version: 2.1
-Template Name: Blue
-*/
+@charset "UTF-8";
 
-//Colors
-$color-primary: #3e8fe0;
-$color-secondary: #000;
-$color-border: #e4e4e4;
-$color-font: #6f8091;
+/**
+ *  Author: Michu2k
+ *  Version: 2.2
+ *  Template Name: Blue
+ */
 
-//Font
-$font-weight-first: 700;
-$font-weight-second: 400;
-$font-family: 'Open Sans', 'Arial' , sans-serif;
+// Colors
+$main-color: #3e8fe0;
+$black-color: #0c0c0c;
+$white-color: #fff;
+$border-color: #e4e4e4;
+$font-color: #677684;
 
-//Mixin
-@mixin transition($param, $time) {
-	-webkit-transition: $param $time;
-	transition: $param $time; 
+// Font
+$font-family: ('Open Sans', 'Arial' , sans-serif);
+$first-weight: 700;
+$second-weight: 300;
+
+// Mixin
+@mixin transition($properties...) {
+	-webkit-transition: $properties;
+		 -o-transition: $properties;
+			transition: $properties; 
 }
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+/** 
+ *	Table of contents
+ *
+ *	1. Basic
+ *	2. Navigation
+ *	3. Mobile button
+ *	4. Header
+ *	5. Section
+ *	6. Sidebar
+ *	7. Contact
+ *	8. Blog
+ *		8.1 Pagination
+  *	9. Footer
+ *	10. LangSwitcher
+ *	11. 404 Page
+ *	12. Gallery
+ *	13. Others
+ *	14. Media queries
+ *		14.1 min-width: 480px
+ *		14.2 min-width: 768px
+ *		14.3 min-width: 992px
+ */
 
-/*---------- 0. Basic ----------*/
+/*---------- 1. Basic ----------*/
+// Body
 body {
-	background-color: #fff; 
+	font-family: $font-family;
+	font-weight: $second-weight;
+	background-color: $white-color; 
 }
 
+// Paragraph
 p {
-	font-family: $font-family;
-	font-weight: $font-weight-second;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 1.8;
-	color: $color-font; 
+	color: $font-color; 
 	word-wrap: break-word;
 }
 
+// Link
 a {
-	font-family: $font-family;
-	color: $color-primary; 
+	color: $main-color; 
 	@include transition(color, .4s);
 
 	&:hover, &:focus {
-		color: $color-secondary;
+		color: $black-color;
 		text-decoration: none;
-		outline: 0;
 	}	
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: $font-family;
-	font-weight: $font-weight-first;	
-	color: $color-secondary;
+// Headings
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+	font-weight: $first-weight;	
+	color: $black-color;
 }
 
+// Line
 hr {
 	height: 1px;
-	background-color: $color-border;
+	background-color: $border-color;
 	border: 0;
 }
 
+// Image
 img {
-  max-width: 100%; 
+	max-width: 100%; 
 }
 
-/*---------- 1. Navigation ----------*/
+/*---------- 2. Navigation ----------*/
 .navbar {
 	height: 80px;
 	width: 100%;
-	background-color: #fff;
+	background-color: $white-color;
 	z-index: 5;	
 	border: 0;
 	border-radius: 0;
 	margin-bottom: 0;
 
-	// Brand
-	.navbar-brand {
-		font-family: $font-family;
-	    font-weight: $font-weight-first;
-	    font-size: 18px;	
-	    color: $color-secondary;
-	    line-height: 80px;
-		height: 80px;
-		padding: 0;
-		margin: 0 !important;
-		@include transition(color, .4s);
+	.navbar-header {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
 
-		&:hover {
-			color: $color-primary;
+		// Brand
+		.navbar-brand {
+		    font-weight: $first-weight;
+		    font-size: 18px;	
+		    color: $black-color;
+		    line-height: 50px;
+			height: 50px;
+			margin-top: 15px;
+			margin-left: 15px;
+			padding: 0;
+			@include transition(color, .4s);
+
+			&:hover {
+				color: $main-color;
+			}
 		}
 	}
 
 	.navbar-nav {
+		background-color: $white-color;
+		border-bottom: 1px solid $border-color;
+
 		> li {
 			&.active {
 				> a {
-					color: $color-secondary;
-			        border-bottom: 1px solid $color-primary;
+					color: $main-color;
 			    }
 			}
 
 			&.open {
 				> a {
-					border: 1px solid transparent;
-					border-bottom: 1px solid $color-primary;
-					background: none;				
-				}	
+					background: none;
+				}
 			}
 
 			> a {
-				font-family: $font-family;
-		        font-weight: $font-weight-first;
+		        font-weight: $first-weight;
 		        font-size: 14px;
-		        color: $color-secondary;	
-		        line-height: 40px;
-		        height: 40px; 
-		        margin-top: 20px;
-		        margin-left: 8px;
-		        margin-right: 8px;
+		        color: $black-color;	
+		        line-height: 50px;
+		        height: 50px; 
+		        text-align: center;
 		        padding: 0;
-		        border: 1px solid transparent;
 				@include transition(all, .4s);
 
-		        &:hover {
-		        	border-bottom: 1px solid $color-primary;
-		        	background: none;
-		        }
-
+		        &:hover, 
 		        &:focus {
+		       		color: $main-color;
 		        	background: none;
 		        }
 			}
 
 			// Dropdown
 			> .dropdown-menu {
-				margin-top: 20px;
 				border: 0;
 				border-radius: 0;
 				box-shadow: none;
+				background-color: rgba($border-color, .4);
 
 				> li {
 					> a {
-						font-family: $font-family;	
-						font-weight: $font-weight-first;
+						font-weight: $first-weight;
 						font-size: 14px;
-						color: $color-secondary;
-						line-height: 30px;
-						height: 30px;
-						margin: 0;
-						padding-top: 0;
-						padding-bottom: 0;
+						color: $black-color;
+						line-height: 40px;
+						height: 40px;
+		        		text-align: center;
+		        		padding: 0;
 						@include transition(all, .4s);
 
 						&:hover {
-							color: $color-primary;
+							color: $main-color;
+							background: none;
 							box-shadow: none;
-							background: none;   
 						}
 					}
 
 					&.active {
 						> a {
-							color: $color-primary;	
-							background-color: #f4f4f4;
-							border: 0;						
+							color: $main-color;
+							background: none;
 						}
 					}
 				}
 			}
 		}
 	}
-
-	.navbar-collapse {
-		border-top: 0;
-	}
 }
 
-/*---------- 2. Mobile button ----------*/
+/*---------- 3. Mobile button ----------*/
 #mobile-btn {
-	position: relative;
-	width: 50px;
+	width: 40px;
 	height: 40px;
-	float: right;
-	margin-top: 20px;
 	cursor: pointer;
-	border: 3px solid $color-secondary;
-	display: none;
+	border: 2px solid $black-color;
+	margin-top: 20px;
+	margin-left: auto;
 	padding: 0;
 	border-radius: 0;
+	position: relative;
 
 	.icon-bar {
-		position: absolute;
-	    width: 34px;
+	    width: 26px;
 	    margin-left: 5px;
-	    height: 3px;
-	    background-color: $color-secondary;
+	    height: 2px;
+	    background-color: $black-color;
 	    border-radius: 0;
+	    margin-top: 0;
+		position: absolute;
 		@include transition(all, .4s);
 
-		&:nth-child(1) {
-      		top: 9px;
-      	}
-
-      	&:nth-child(2) {
-      		top: 18px; 
-      	}
+		&:nth-child(1) { top: 11px; }
+      	&:nth-child(2) { top: 23px; }
 	}	
 
 	&.toggled {
 		.icon-bar {
 			&:nth-child(1) {
-				-webkit-transform: rotate(45deg) translate(5px, 4px);
-			    -o-transform: rotate(45deg) translate(5px, 4px);
-			    transform: rotate(45deg) translate(5px, 4px);
+				top: 17px;
+				-webkit-transform: rotate(45deg);
+			    	 -o-transform: rotate(45deg);
+			    		transform: rotate(45deg);
 			}
 
 			&:nth-child(2) {
-				-webkit-transform: rotate(-45deg) translate(5px, -4px);
-			    -o-transform: rotate(-45deg) translate(5px, -4px);
-			    transform: rotate(-45deg) translate(5px, -4px);		
+				top: 17px;
+				-webkit-transform: rotate(-45deg);
+			    	 -o-transform: rotate(-45deg);
+			    		transform: rotate(-45deg);	
 			}
 		}
 	}
 }
 
-/*---------- 3. Header ----------*/
-header {
-	background-color: $color-primary;
+/*---------- 4. Header ----------*/
+.header {
+	background-color: $main-color;
 	background-repeat: no-repeat;
 	background-position: top; 
 	background-size: cover;
 	margin-bottom: 80px;
 	min-height: 250px;
-	border-bottom: 8px solid $color-primary;
+	border-bottom: 8px solid $main-color;
 
 	&.header-main {
 		min-height: 420px;
 	}
 
 	.header-title {
-		font-family: $font-family;
 		font-size: 35px;
-		font-weight: $font-weight-first;
-		color: #fff;
+		font-weight: $first-weight;
+		color: $white-color;
 		text-align: center;
 		text-transform: uppercase;
 		margin-top: 70px;
@@ -256,7 +277,7 @@ header {
 
 	hr {
 		height: 1px;
-		background: #fff;
+		background: $white-color;
 		max-width: 60px;
 		border: 0;
 		margin-top: 5px;
@@ -264,64 +285,65 @@ header {
 	}
 
 	.header-desc {
-	    font-family: $font-family;
-	    font-weight: $font-weight-first;
+	    font-weight: $first-weight;
 	    font-size: 16px;
 	    text-align: center;
-	    color: #fff;
+	    color: $white-color;
 	    margin-top: 15px;
 	}
 }
 
-/*---------- 4. Section ----------*/
+/*---------- 5. Section ----------*/
 .section {
 	margin-bottom: 30px;
 
-	ol, ul {
+	ol, 
+	ul {
 		> li {
-			color: $color-font;
+			color: $font-color;
 		}		
 	}
 }
 
-/*---------- 5. Sidebar ----------*/
-aside {
+/*---------- 6. Sidebar ----------*/
+.aside {
 	.widget-container {
-		border: 1px solid $color-border;
-		padding-top: 15px;
-		padding-bottom: 15px;
-		padding-left: 25px;
-		padding-right: 25px;
+		border-top: 1px solid $border-color;
+		padding: 15px 0;
 		margin-bottom: 30px;
 
 		.widget-title {
-			font-family: $font-family;
-			font-weight: $font-weight-first;
+			font-weight: $first-weight;
 		    font-size: 16px;
-		    color: $color-secondary;
+		    color: $black-color;
 		    text-transform: uppercase;
 		    margin-top: 10px; 	
 		    margin-bottom: 15px;		
 		}
 
 		.widget-content {
+			font-size: 14px;
+
+			p {
+				font-size: 14px; 
+			}
+
 			ul {
 				padding: 0;
 
 				> li {
 					list-style-type: none;
-					color: $color-primary;
-					border-top: 1px solid $color-border;
-					padding-top: 10px;
-					padding-bottom: 10px;
+					color: $main-color;
+					border-top: 1px solid $border-color;
+					padding: 10px 0;
 
 					> a {
 						font-size: 13px;
-						color: $color-font;
+						color: $font-color;
 						@include transition(color, .4s);
 
 						&:hover {
-							color: $color-primary;
+							color: $main-color;
 						}
 					}
 				}
@@ -332,37 +354,31 @@ aside {
 			margin-top: 20px;
 
 			a {
+				text-align: center;
 				margin-right: 12px;
+				width: 32px;
+				height: 32px;
+				border: 1px solid $main-color;
+				border-radius: 50%;
+				display: inline-block;
 
 				i {
-					font-size: 18px;
-					color: $color-primary;
+					line-height: 32px;
+					font-size: 14px;
+					color: $main-color;
 					@include transition(color, .4s);
 
 				}
 
 				&:hover {
+					border: 1px solid $black-color;
+
 					i {
-						color: $color-secondary;
+						color: $black-color;
 					}
 				}
 			}
 		}
-	}
-}
-
-/*---------- 6. Footer ----------*/
-footer {
-	border-top: 1px solid $color-border;
-	margin-top: 40px;
-	height: 80px;
-
-	p {
-		color: $color-font;
-		font-size: 12px; 
-		text-align: center;		
-		line-height: 80px;
-		margin: 0;
 	}
 }
 
@@ -372,25 +388,25 @@ form {
 		margin-top: 25px;
 
 		label {
-			font-family: $font-family;
-			font-weight: $font-weight-first;
+			font-weight: $first-weight;
 			font-size: 11px;
-		    color: $color-secondary;
+		    color: $black-color;
 		    margin-bottom: 6px;
 		    text-align: left;	
 		}
 
-		input, textarea {
+		input, 
+		textarea {
 			min-height: 40px;
 			padding: 10px;
-		    border: 1px solid $color-border;
+		    border: 1px solid $border-color;
 		    border-radius: 0;
 		    background: none;
 		    box-shadow: none !important;
 		    resize: none;	
 
 		    &:focus {
-		    	border: 1px solid $color-primary;	
+		    	border: 1px solid $main-color;	
 		    }
 		}
 	}
@@ -398,19 +414,19 @@ form {
 	// Button
 	.btn-default {
 		font-size: 18px;
-		color: $color-primary;
+		color: $main-color;
 		margin-top: 30px;
-		width: 140px;
-		padding: 10px;
+		width: 100%;
+		padding: 8px;
 		background: none;
-		border: 1px solid $color-primary;
-		border-radius: 20px;
-		
+		border: 1px solid $main-color;
+		border-radius: 10px;
 		@include transition(all, .4s);
 
-		&:hover, &:focus {
-			color: $color-secondary;
-			border: 1px solid $color-secondary;
+		&:hover, 
+		&:focus {
+			color: $black-color;
+			border: 1px solid $black-color;
 			background: none !important;
 			box-shadow: none;
 		}
@@ -423,78 +439,82 @@ form {
 
 	.post-header {
 		figure {
-			background-color: $color-border;
+			background-color: $border-color;
 			text-align: center;
 			margin-bottom: 25px;
 		}
 		
+		// Title
 		.post-title {
-			font-family: $font-family;
-			font-weight: $font-weight-first;
+			font-weight: $first-weight;
 			font-size: 22px;
-			color: $color-secondary;
-			margin-top: 0;
-		    margin-bottom: 0;
-		    margin-right: 40px;
+			color: $black-color;
+		    margin: 0 40px 0 0;
 		    @include transition(color, .4s);
 
 		    &:hover {
-		    	color: $color-primary;	
+		    	color: $main-color;	
 		    }
 		}
 
+		// Tags
 		.post-tags {
 			a {
 				font-size: 11px;
-				color: #fff;
-				padding: 3px 7px;
-				background-color: $color-primary;
-				border-radius: 20px;
-				margin-right: 4px;
+				color: $white-color;
+				background-color: $main-color;
+				padding: 3px 5px;
+				margin-right: 5px;
+				border-radius: 5px;
 				@include transition(all, .4s);
 
 				&:hover {
-					background-color: $color-secondary;
+					background-color: $black-color;
 				}
 			}
 		}
 	}
 
 	.post-meta {
-		p {
+		.post-meta-item {
 			font-size: 12px;
-			color: $color-font;
+			color: $font-color;
 		    margin-top: 4px;	
 		    margin-bottom: 0;	
 		}
 	}
 
 	.post-content {
-		margin-top: 20px;
+		margin-top: 30px;
 	}
 
 	.post-footer {
 		margin-top: 20px;
 
+		// Read more button
 		.post-read-more {
 			font-size: 13px;
-			color: $color-primary;
-			@include transition(color, .4s);
+			color: $main-color;
+			padding-bottom: 3px;
+			border-bottom: 2px solid transparent;
+			@include transition(color, .3s);
 
 			&:hover {
-				color: $color-secondary;
+				color: $black-color;
+				border-bottom: 2px solid $main-color;
 			}
 		}
 
+		// Share buttons
 		.post-share {
 			i {
-				color: #fff;
+				color: $white-color;
 				text-align: center;
 				line-height: 30px;
 				margin-right: 10px;
 				height: 30px;
 				width: 30px;
-				background-color: $color-secondary;
+				background-color: $black-color;
 				border-radius: 50%;
 
 				&.fa-twitter {background-color: #1da1f2};
@@ -503,13 +523,14 @@ form {
 			}	
 		}	
 
+		// Profile
 		.post-profile {
 			margin-top: 30px;
 			position: relative;
 
 			.profile-header {
-				height: 100%;
-				position: absolute;
+				text-align: center;
+				margin-bottom: 20px;
 
 				.profile-picture {
 					width: 120px;
@@ -519,20 +540,18 @@ form {
 			}
 
 			.profile-content {
-				margin-left: 140px;
+				text-align: center;
 
 				.profile-name {
 					font-size: 20px;
-					color: $color-secondary;
-					margin: 0;
-					
+					color: $black-color;
 				}
 
 				.profile-description {
 					font-size: 14px;
-					color: $color-font;
-					line-height: 1.6;
-					margin-top: 10px;
+					color: $font-color;
+					line-height: 1.7;
+					margin-top: 15px;
 				}
 			}
 		}	
@@ -544,10 +563,10 @@ form {
 	}
 }
 
-// Pagination
+/*---------- 8.1 Pagination ----------*/
 .pager {
 	text-align: center;
-	border-top: 1px solid $color-border;
+	border-top: 1px solid $border-color;
 	padding-top: 20px;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -555,37 +574,57 @@ form {
 	li {
 		a {
 			font-size: 13px;
-			color: $color-primary;
-			min-width: 150px;
+			color: $main-color;
+			width: 100%;
 			background: none;
 			padding: 10px;
-			border: 1px solid $color-primary;
-			border-radius: 20px;
+			border: 1px solid $main-color;
+			border-radius: 10px;
 			margin-bottom: 10px;
 			@include transition(all, .4s);
 
-			&:hover, &:focus {
-				color: $color-secondary;	
-				border: 1px solid $color-secondary;
+			&:hover, 
+			&:focus {
+				color: $black-color;	
+				border: 1px solid $black-color;
 				background: none;
 			}	
 		}
 	}
 }
 
-/*---------- 9. LangSwitcher ----------*/
+/*---------- 9. Footer ----------*/
+.footer {
+	border-top: 1px solid $border-color;
+	margin-top: 40px;
+	height: 100px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+
+	p {
+		color: $font-color;
+		font-size: 11px; 
+		text-align: center;
+		margin: 0;
+	}
+}
+
+/*---------- 10. LangSwitcher ----------*/
 .langswitcher {
+	padding: 2px 0;
+
 	form {
-		margin-top: 20px;
-		margin-left: 10px;
+		margin: 10px 20px;
+
 		select {
-			font-family: $font-family;
-			font-weight: $font-weight-first;
+			font-weight: $first-weight;
 			font-size: 13px;
-			color: $color-font;
+			color: $black-color;
 			height: 40px;
-			border: 0;
-			border-left: 1px solid $color-border;
+			border: 1px solid $border-color;
 			border-radius: 0;
 			cursor: pointer;	
 			box-shadow: none;
@@ -594,41 +633,40 @@ form {
 			@include transition(all, .3s);
 
 			&:focus {
-				color: $color-primary;
-				border-left: 1px solid $color-border;
+				color: $main-color;
+				border: 1px solid $main-color;
 				box-shadow: none;
 			}
 		}
 	}
 }
 
-/*---------- 10. 404 Page ----------*/
+/*---------- 11. 404 Page ----------*/
 .error404 {
 	text-align: center;
+
 	.error404-title {
-		font-family: $font-family;
-		font-weight: $font-weight-first;
+		font-weight: $first-weight;
 		font-size: 80px;
-		color: $color-primary;
+		color: $main-color;
 		margin-top: 140px;	
 	}
 
 	p {
-		color: $color-font;
+		color: $font-color;
 		margin-top: 30px;
 		margin-bottom: 90px;
 	}
 }
 
-/*---------- 11. Gallery ----------*/
+/*---------- 12. Gallery ----------*/
 .thumbnail {
 	border-radius: 0;
-	border: 1px solid $color-border;
+	border: 1px solid $border-color;
 
 	.caption {
 		h3 {
-			font-family: $font-family;
-			font-weight: $font-weight-first;
+			font-weight: $first-weight;
 			font-size: 18px;
 		}
 
@@ -638,93 +676,104 @@ form {
 	}
 }
 
-/*---------- 12. Others ----------*/
+/*---------- 13. Others ----------*/
 // Quote
 blockquote {
-	border-top: 1px solid $color-border;
-	border-right: 1px solid $color-border;
-	border-bottom: 1px solid $color-border;
-	border-left: 3px solid $color-primary;
+	border-top: 1px solid $border-color;
+	border-right: 1px solid $border-color;
+	border-bottom: 1px solid $border-color;
+	border-left: 3px solid $main-color;
 	padding: 20px;
 }
 
 // Placeholder
-input, textarea {
+input, 
+textarea {
 	&::-webkit-input-placeholder { color: #ddd !important; }
 	&:-moz-placeholder { color: #ddd !important; }
 	&::-moz-placeholder { color: #ddd !important; }
 	&:-ms-input-placeholder { color: #ddd !important; }
 }
 
-/*---------- 13. Responsive ----------*/
-@media (max-width: 767px) {
+/*---------- 14. Media queries ----------*/
+/*---------- 14.1 min-width: 480px ----------*/
+@media (min-width: 480px) {
+	// Blog
+	.post {
+		.post-footer {
+			.post-profile {
+				.profile-header {
+					margin-bottom: 0;
+					position: absolute;
+				}
 
+				.profile-content {
+					text-align: left;
+					margin-left: 140px;
+				}
+			}
+		}
+	}
+	
+	// Pagination
+	.pager {
+		li {
+			a {
+				width: 150px;
+				margin: 0 5px 10px 5px;	
+			}
+		}
+	}	
+}
+
+/*---------- 14.2 min-width: 768px ----------*/
+@media (min-width: 768px) {
 	// Mobile btn
 	#mobile-btn {
-		display: block;
+		display: none;
 	}
 
 	// Navigation
-  	.navbar {
-  		.navbar-brand {
-			margin-left: 15px !important;
-  		}
-		
-		.navbar-collapse {
-			padding: 0;
+	.navbar {
+		.navbar-header {
+			// Brand
+			.navbar-brand {
+				margin-left: 0;
+			}
 		}
 
-		.navbar-nav {		
-			background-color: #fff;
-			width: 100%;	
-			margin: 0;
-			left: 0;
-			
+		.navbar-nav {
+			border-bottom: 0;
+
 			> li {
 				&.active {
 					> a {
-						color: #fff;
-						background-color: $color-primary;
-						border: 0;
-					}	
-				}		
-
-				a {
-					text-align: center;
-					line-height: 50px;
-					height: 50px;
-					margin: 0;
-					border: 0;
-
-					&:hover {
-						color: $color-primary;
-						background-color: #fff;
-						border: 0;	
+						border-bottom: 2px solid $main-color;
 					}
-				}	
+				}
 
-				&.open {
-					> a {
-						border: 0;	
+				> a {
+					line-height: 80px;
+					height: 80px;
+			        padding: 0 10px;
+					border-bottom: 2px solid transparent;
+
+					&:hover, 
+					&:focus {
+						border-bottom: 2px solid $main-color;
 					}
 				}
 
 				// Dropdown
-				&.dropdown {
-					> .dropdown-menu {
-						border: 0;
-						margin-top: 0;
-						padding: 0;
+				> .dropdown-menu {
+					background-color: $white-color;
 
-						> li {
-							> a {
-								line-height: 50px;
-								background-color: $color-border;
-								height: 50px;
-								background-color: #fff;
-								margin: 0;
-								padding: 0;
-							}
+					> li {
+						> a {
+							line-height: 34px;
+							height: 34px;
+			        		text-align: left;
+			        		padding: 0 10px;
 						}
 					}
 				}
@@ -734,16 +783,18 @@ input, textarea {
 
 	// LangSwitcher
 	.langswitcher {
-		padding-top: 2px;
-		padding-bottom: 2px;
-		form {
-			margin: 10px 20px;
+		padding: 0;
+
+		form {		
+			margin: 20px 0 0 10px;
+
 			select {
-				color: $color-secondary;
-				border: 2px solid $color-secondary;
+				border: 0;
+				border-left: 1px solid $border-color;
 
 				&:focus {
-					border: 2px solid $color-primary;
+					border: 0;
+					border-left: 1px solid $border-color;
 				}
 			}
 		}
@@ -752,18 +803,23 @@ input, textarea {
 	// Form
 	form {
 		.btn-default {
-			width: 100%;
+			width: 150px;
 		}
+	}
+
+	// Footer
+	.footer {
+		height: 80px;
 	}
 }
 
-@media (max-width: 480px) {
-	// Pagination
-	.pager {
-		li {
-			a {
-				width: 100%;	
-			}
+/*---------- 14.3 min-width: 992px ----------*/
+@media (min-width: 992px) {
+	.aside {
+		.widget-container {
+			border-left: 1px solid $border-color;
+			padding: 15px 0 15px 25px;
+			border-top: 0;
 		}
-	}	
+	}
 }

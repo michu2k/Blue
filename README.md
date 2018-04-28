@@ -2,7 +2,7 @@
 ![Preview](./previewgithub.png?raw=true)
 
 ## Version
-2.2
+2.3
 
 ## Requirements
 Batflat 1.3.x

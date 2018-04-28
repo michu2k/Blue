@@ -1,13 +1,10 @@
 {template: inc/header.html}
 
 <header class="header" style="background-image: url('{$bat.theme}/img/bg.jpg');">    
-    <div class="container">
-        <div class="col-md-12">
-            <h1 class="header-title">{$page.title}</h1>
-            <hr>
-            <p class="header-desc">{if: $page.desc}{$page.desc}{else}{$settings.description}{/if}</p>            
-        </div>
-    </div>                
+    <div class="container header-container">
+        <h1 class="header-title">{$page.title}</h1>
+        <p class="header-desc">{if: $page.desc}{$page.desc}{else}{$settings.description}{/if}</p>
+    </div>
 </header>
 
 <div class="container">
@@ -17,14 +14,14 @@
                 {if: $bat.notify}
                 <div id="notify" class="alert alert-{$bat.notify.type}">{$bat.notify.text}</div>
                 {/if}
-                {$page.content}      
+                {$page.content}
             </div>   
         </div>
 
         <div class="col-md-4">
             {template: inc/sidebar.html}
         </div>
-    </div>    
+    </div>
 </div>
 
 {template: inc/footer.html}

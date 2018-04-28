@@ -1,32 +1,29 @@
 <aside class="aside">
     <div class="widget-container">
-    	<h2 class="widget-title">
-        	About
+        <h2 class="widget-title">
+            About
         </h2>
 
         <div class="widget-content">
-        	{$snippet.widget-content}  
-		</div>
+            {$snippet.widget-content}  
+        </div>
 
-		<div class="widget-social">
-			{template: inc/social.html}
-		</div> 
+        <div class="widget-social">
+            {template: inc/social.html}
+        </div> 
     </div>
 
     <div class="widget-container">
-    	<h2 class="widget-title">
-        	{$lang.blog.latest_posts}
+        <h2 class="widget-title">
+            {$lang.blog.latest_posts}
         </h2>
 
         <div class="widget-content">
-			<ul>
-				{loop: $latestPosts}
-					<li><a href="{?= url(['blog', 'post', $value.slug]) ?}">{$value.title}</a></li>
-				{/loop}
-			</ul>
-		</div>
-	</div>
+            <ul>
+                {loop: $latestPosts}
+                    <li><a href="{?= url(['blog', 'post', $value.slug]) ?}">{$value.title}</a></li>
+                {/loop}
+            </ul>
+        </div>
+    </div>
 </aside>
-
-
-                       

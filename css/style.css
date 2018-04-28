@@ -1,29 +1,29 @@
-/**
+/*!
  *  Author: Michu2k
- *  Version: 2.2
+ *  Version: 2.3
  *  Template Name: Blue
  */
 /** 
- *	Table of contents
+ *  Table of contents
  *
- *	1. Basic
- *	2. Navigation
- *	3. Mobile button
- *	4. Header
- *	5. Section
- *	6. Sidebar
- *	7. Contact
- *	8. Blog
- *		8.1 Pagination
-  *	9. Footer
- *	10. LangSwitcher
- *	11. 404 Page
- *	12. Gallery
- *	13. Others
- *	14. Media queries
- *		14.1 min-width: 480px
- *		14.2 min-width: 768px
- *		14.3 min-width: 992px
+ *  1. Basic
+ *  2. Navigation
+ *  3. Mobile button
+ *  4. Header
+ *  5. Section
+ *  6. Sidebar
+ *  7. Contact
+ *  8. Blog
+ *      8.1 Pagination
+ *  9. Footer
+ *  10. LangSwitcher
+ *  11. 404 Page
+ *  12. Gallery
+ *  13. Others
+ *  14. Media queries
+ *      14.1 min-width: 480px
+ *      14.2 min-width: 768px
+ *      14.3 min-width: 992px
  */
 /*---------- 1. Basic ----------*/
 body {
@@ -41,9 +41,9 @@ p {
 
 a {
   color: #3e8fe0;
-  -webkit-transition: color, 0.4s;
-  -o-transition: color, 0.4s;
-  transition: color, 0.4s;
+  -webkit-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
 }
 a:hover, a:focus {
   color: #0c0c0c;
@@ -72,7 +72,7 @@ img {
 
 /*---------- 2. Navigation ----------*/
 .navbar {
-  height: 80px;
+  height: 90px;
   width: 100%;
   background-color: #fff;
   z-index: 5;
@@ -91,12 +91,12 @@ img {
   color: #0c0c0c;
   line-height: 50px;
   height: 50px;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-left: 15px;
   padding: 0;
-  -webkit-transition: color, 0.4s;
-  -o-transition: color, 0.4s;
-  transition: color, 0.4s;
+  -webkit-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
 }
 .navbar .navbar-header .navbar-brand:hover {
   color: #3e8fe0;
@@ -119,9 +119,9 @@ img {
   height: 50px;
   text-align: center;
   padding: 0;
-  -webkit-transition: all, 0.4s;
-  -o-transition: all, 0.4s;
-  transition: all, 0.4s;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
   color: #3e8fe0;
@@ -141,9 +141,9 @@ img {
   height: 40px;
   text-align: center;
   padding: 0;
-  -webkit-transition: all, 0.4s;
-  -o-transition: all, 0.4s;
-  transition: all, 0.4s;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 .navbar .navbar-nav > li > .dropdown-menu > li > a:hover {
   color: #3e8fe0;
@@ -160,41 +160,41 @@ img {
   width: 40px;
   height: 40px;
   cursor: pointer;
-  border: 2px solid #0c0c0c;
-  margin-top: 20px;
+  margin-top: 25px;
   margin-left: auto;
   padding: 0;
+  border: 0;
   border-radius: 0;
   position: relative;
 }
 #mobile-btn .icon-bar {
-  width: 26px;
+  width: 30px;
   margin-left: 5px;
   height: 2px;
   background-color: #0c0c0c;
   border-radius: 0;
   margin-top: 0;
   position: absolute;
-  -webkit-transition: all, 0.4s;
-  -o-transition: all, 0.4s;
-  transition: all, 0.4s;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 #mobile-btn .icon-bar:nth-child(1) {
-  top: 11px;
+  top: 13px;
 }
 #mobile-btn .icon-bar:nth-child(2) {
-  top: 23px;
+  top: 25px;
 }
 #mobile-btn.toggled .icon-bar:nth-child(1) {
-  top: 17px;
+  top: 19px;
   -webkit-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 #mobile-btn.toggled .icon-bar:nth-child(2) {
-  top: 17px;
+  top: 19px;
   -webkit-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
@@ -205,38 +205,38 @@ img {
   background-position: top;
   background-size: cover;
   margin-bottom: 80px;
-  min-height: 250px;
-  border-bottom: 8px solid #3e8fe0;
+  height: 320px;
+  border-bottom: 5px solid #3e8fe0;
 }
 .header.header-main {
-  min-height: 420px;
+  height: 480px;
+}
+.header .header-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
 }
 .header .header-title {
-  font-size: 35px;
   font-weight: 700;
-  color: #fff;
-  text-align: center;
-  text-transform: uppercase;
-  margin-top: 70px;
+  font-size: 40px;
+  color: #0c0c0c;
+  margin: 0;
 }
 .header .header-title--main {
-  font-size: 50px;
-  margin-top: 135px;
-}
-.header hr {
-  height: 1px;
-  background: #fff;
-  max-width: 60px;
-  border: 0;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  font-size: 55px;
 }
 .header .header-desc {
-  font-weight: 700;
+  font-weight: 300;
   font-size: 16px;
-  text-align: center;
-  color: #fff;
+  color: #677684;
   margin-top: 15px;
+  margin-bottom: 0;
+  max-width: 450px;
 }
 
 /*---------- 5. Section ----------*/
@@ -258,7 +258,6 @@ img {
   font-weight: 700;
   font-size: 16px;
   color: #0c0c0c;
-  text-transform: uppercase;
   margin-top: 10px;
   margin-bottom: 15px;
 }
@@ -280,9 +279,9 @@ img {
 .aside .widget-container .widget-content ul > li > a {
   font-size: 13px;
   color: #677684;
-  -webkit-transition: color, 0.4s;
-  -o-transition: color, 0.4s;
-  transition: color, 0.4s;
+  -webkit-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
 }
 .aside .widget-container .widget-content ul > li > a:hover {
   color: #3e8fe0;
@@ -303,9 +302,9 @@ img {
   line-height: 32px;
   font-size: 14px;
   color: #3e8fe0;
-  -webkit-transition: color, 0.4s;
-  -o-transition: color, 0.4s;
-  transition: color, 0.4s;
+  -webkit-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
 }
 .aside .widget-container .widget-social a:hover {
   border: 1px solid #0c0c0c;
@@ -348,9 +347,9 @@ form .btn-default {
   background: none;
   border: 1px solid #3e8fe0;
   border-radius: 10px;
-  -webkit-transition: all, 0.4s;
-  -o-transition: all, 0.4s;
-  transition: all, 0.4s;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 form .btn-default:hover, form .btn-default:focus {
   color: #0c0c0c;
@@ -363,7 +362,7 @@ form .btn-default:hover, form .btn-default:focus {
 .post {
   margin-bottom: 80px;
 }
-.post .post-header figure {
+.post .post-header .post-figure {
   background-color: #e4e4e4;
   text-align: center;
   margin-bottom: 25px;
@@ -373,9 +372,9 @@ form .btn-default:hover, form .btn-default:focus {
   font-size: 22px;
   color: #0c0c0c;
   margin: 0 40px 0 0;
-  -webkit-transition: color, 0.4s;
-  -o-transition: color, 0.4s;
-  transition: color, 0.4s;
+  -webkit-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
 }
 .post .post-header .post-title:hover {
   color: #3e8fe0;
@@ -387,9 +386,9 @@ form .btn-default:hover, form .btn-default:focus {
   padding: 3px 5px;
   margin-right: 5px;
   border-radius: 5px;
-  -webkit-transition: all, 0.4s;
-  -o-transition: all, 0.4s;
-  transition: all, 0.4s;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 .post .post-header .post-tags a:hover {
   background-color: #0c0c0c;
@@ -411,9 +410,9 @@ form .btn-default:hover, form .btn-default:focus {
   color: #3e8fe0;
   padding-bottom: 3px;
   border-bottom: 2px solid transparent;
-  -webkit-transition: color, 0.3s;
-  -o-transition: color, 0.3s;
-  transition: color, 0.3s;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 .post .post-footer .post-read-more:hover {
   color: #0c0c0c;
@@ -485,9 +484,9 @@ form .btn-default:hover, form .btn-default:focus {
   border: 1px solid #3e8fe0;
   border-radius: 10px;
   margin-bottom: 10px;
-  -webkit-transition: all, 0.4s;
-  -o-transition: all, 0.4s;
-  transition: all, 0.4s;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 .pager li a:hover, .pager li a:focus {
   color: #0c0c0c;
@@ -497,7 +496,6 @@ form .btn-default:hover, form .btn-default:focus {
 
 /*---------- 9. Footer ----------*/
 .footer {
-  border-top: 1px solid #e4e4e4;
   margin-top: 40px;
   height: 100px;
   display: -webkit-flex;
@@ -531,9 +529,9 @@ form .btn-default:hover, form .btn-default:focus {
   box-shadow: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-  -webkit-transition: all, 0.3s;
-  -o-transition: all, 0.3s;
-  transition: all, 0.3s;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .langswitcher form select:focus {
   color: #3e8fe0;
@@ -625,17 +623,10 @@ textarea:-ms-input-placeholder {
   .navbar .navbar-nav {
     border-bottom: 0;
   }
-  .navbar .navbar-nav > li.active > a {
-    border-bottom: 2px solid #3e8fe0;
-  }
   .navbar .navbar-nav > li > a {
-    line-height: 80px;
-    height: 80px;
-    padding: 0 10px;
-    border-bottom: 2px solid transparent;
-  }
-  .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
-    border-bottom: 2px solid #3e8fe0;
+    line-height: 90px;
+    height: 90px;
+    margin-left: 25px;
   }
   .navbar .navbar-nav > li > .dropdown-menu {
     background-color: #fff;

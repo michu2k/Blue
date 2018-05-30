@@ -1,7 +1,7 @@
 {
     "name": "Blue",
-    "version": "2.3",
+    "version": "2.3.0",
     "author": "Michał Strumpf",
     "email": "michal.strumpf@gmail.com",
-    "thumb": "preview.png"
+    "thumb": "img/preview.png"
 }

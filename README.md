@@ -37,8 +37,10 @@ Batflat 1.3.x
 You can modify your social icons in the `inc/social.html` file. All you need to do is change LINK and ICON_NAME.
 
 ```html
-<a class="social-icon" href="LINK">
-    <i class="fa fa-ICON_NAME" aria-hidden="true"></i>
+<a href="LINK">
+    <span class="fa fa-ICON_NAME" aria-hidden="true">
+        <span class="sr-only">NAME</span>
+    </span>
 </a>
 ```
 

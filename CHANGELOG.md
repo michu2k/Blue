@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.3.1
+    - Removed Google+ share button
+    - Added language type in html tag
+    - Added compressed .js file
+    - Added anippet for the sidebar widget
+    - Fixed share popups
+    - Fixed missing images alternative text 
+    - Fixed missing images background
+    - Fixed pagination
+    - Various fixes
+
 ## 2.3
     - Added CHANGELOG.md
     - Updated bg.jpg

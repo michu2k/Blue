@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<?php preg_match('/[\s\S]{2}/', $bat['lang'], $m); echo $m[0];?>">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="{$bat.theme}/css/normalize.min.css">
     <link rel="stylesheet" href="{$bat.path}/inc/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{$bat.theme}/css/style.min.css">
+    <link rel="stylesheet" href="{$bat.theme}/css/style.min.css?v=2.3.1">
     <link rel="stylesheet" href="https://use.fontawesome.com/56fa629212.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
 
@@ -20,10 +20,10 @@
     {loop: $bat.header}{$value}{/loop}
 </head>
 <body>
-
+ 
 <nav class="navbar">
     <div class="container">
-        <div class="navbar-header">
+        <div class="navbar-header is-flex">
             <a href="{$bat.path}" class="navbar-brand">{$settings.title}</a>
             <button type="button" id="mobile-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
                 <span class="icon-bar"></span>

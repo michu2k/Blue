@@ -1,7 +1,7 @@
 {template: inc/header.html}
 
 <header class="header" style="background-image: url('{$bat.theme}/img/blog-bg.jpg');">   
-    <div class="container header-container">
+    <div class="container header-container is-flex">
         <h1 class="header-title">{$blog.title}</h1>
         <p class="header-desc">{$blog.desc}</p> 
     </div>               
@@ -15,7 +15,7 @@
                     <div class="post-header">
                         {if: $post.cover_photo}
                         <figure class="post-figure">
-                            <img src="{$post.cover_url}">
+                            <img src="{$post.cover_url}" alt="{$post.title}">
                         </figure>
                         {/if} 
 
@@ -41,20 +41,21 @@
                     <div class="post-footer">
                         <hr>
                         <div class="post-share">
-                             <a href="http://twitter.com/home?status={?= urlencode($post.url) ?}">
-                                <i class="fa fa-twitter" data-toggle="tooltip" title="" data-original-title="Twitter"></i>
+                            <a href="http://twitter.com/home?status={?= urlencode($post.url) ?}" class="share-tooltip" data-title="Twitter">
+                                <span class="fa fa-twitter" aria-hidden="true">
+                                    <span class="sr-only">Twitter</span>
+                                </span>
                             </a>
-                            <a href="https://www.facebook.com/sharer.php?u={?= urlencode($post.url) ?}">
-                                <i class="fa fa-facebook" data-toggle="tooltip" title="" data-original-title="Facebook"></i>
-                            </a>
-                            <a href="http://plus.google.com/share?url={?= urlencode($post.url) ?}">
-                                <i class="fa fa-google-plus" data-toggle="tooltip" title="" data-original-title="Google-plus"></i>
-                            </a>                           
+                            <a href="https://www.facebook.com/sharer.php?u={?= urlencode($post.url) ?}" class="share-tooltip" data-title="Facebook">
+                                <span class="fa fa-facebook" aria-hidden="true">
+                                    <span class="sr-only">Facebook</span>
+                                </span>
+                            </a>                        
                         </div>
                         <hr> 
                         <div class="post-profile">
                             <div class="profile-header">
-                                <img src="{?= $post.author.avatar ?}" class="profile-picture">  
+                                <img src="{?= $post.author.avatar ?}" class="profile-picture" alt="">  
                             </div>
                             <div class="profile-content">
                                 <h2 class="profile-name">{$post.author.name}</h2>

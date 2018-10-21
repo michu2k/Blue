@@ -1,6 +1,7 @@
+@charset "UTF-8";
 /*!
  *  Author: Michał Strumpf
- *  Version: 2.3.0
+ *  Version: 2.3.1
  *  Template Name: Blue
  */
 /** 
@@ -79,11 +80,6 @@ img {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
-}
-.navbar .navbar-header {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 .navbar .navbar-header .navbar-brand {
   font-weight: 700;
@@ -212,9 +208,6 @@ img {
   height: 480px;
 }
 .header .header-container {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
   -webkit-justify-content: center;
@@ -298,7 +291,7 @@ img {
   border-radius: 50%;
   display: inline-block;
 }
-.aside .widget-container .widget-social a i {
+.aside .widget-container .widget-social a span {
   line-height: 32px;
   font-size: 14px;
   color: #3e8fe0;
@@ -309,7 +302,7 @@ img {
 .aside .widget-container .widget-social a:hover {
   border: 1px solid #0c0c0c;
 }
-.aside .widget-container .widget-social a:hover i {
+.aside .widget-container .widget-social a:hover span {
   color: #0c0c0c;
 }
 
@@ -418,7 +411,7 @@ form .btn-default:hover, form .btn-default:focus {
   color: #0c0c0c;
   border-bottom: 2px solid #3e8fe0;
 }
-.post .post-footer .post-share i {
+.post .post-footer .post-share span {
   color: #fff;
   text-align: center;
   line-height: 30px;
@@ -428,14 +421,11 @@ form .btn-default:hover, form .btn-default:focus {
   background-color: #0c0c0c;
   border-radius: 50%;
 }
-.post .post-footer .post-share i.fa-twitter {
+.post .post-footer .post-share span.fa-twitter {
   background-color: #1da1f2;
 }
-.post .post-footer .post-share i.fa-facebook {
+.post .post-footer .post-share span.fa-facebook {
   background-color: #3b5998;
-}
-.post .post-footer .post-share i.fa-google-plus {
-  background-color: #dd4b39;
 }
 .post .post-footer .post-profile {
   margin-top: 30px;
@@ -469,26 +459,25 @@ form .btn-default:hover, form .btn-default:focus {
 
 /*---------- 8.1 Pagination ----------*/
 .pager {
-  text-align: center;
   border-top: 1px solid #e4e4e4;
   padding-top: 20px;
   margin-top: 0;
   margin-bottom: 0;
 }
-.pager li a {
+.pager .pager-link {
   font-size: 13px;
   color: #3e8fe0;
   width: 100%;
   background: none;
   padding: 10px;
   border: 1px solid #3e8fe0;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 10px;
-  -webkit-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-.pager li a:hover, .pager li a:focus {
+.pager .pager-link:hover, .pager .pager-link:focus {
   color: #0c0c0c;
   border: 1px solid #0c0c0c;
   background: none;
@@ -498,13 +487,10 @@ form .btn-default:hover, form .btn-default:focus {
 .footer {
   margin-top: 40px;
   height: 100px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   align-items: center;
 }
-.footer p {
+.footer .footer-text {
   color: #677684;
   font-size: 11px;
   text-align: center;
@@ -569,6 +555,12 @@ form .btn-default:hover, form .btn-default:focus {
 }
 
 /*---------- 13. Others ----------*/
+.is-flex {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 blockquote {
   border-top: 1px solid #e4e4e4;
   border-right: 1px solid #e4e4e4;
@@ -606,9 +598,9 @@ textarea:-ms-input-placeholder {
     margin-left: 140px;
   }
 
-  .pager li a {
+  .pager .pager-link {
     width: 150px;
-    margin: 0 5px 10px 5px;
+    margin: 0;
   }
 }
 /*---------- 14.2 min-width: 768px ----------*/

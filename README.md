@@ -2,7 +2,7 @@
 ![Preview](./img/previewgithub.png?raw=true)
 
 ## Version
-2.3.0
+2.3.1
 
 ## Requirements
 Batflat 1.3.x
@@ -30,6 +30,7 @@ Batflat 1.3.x
 - Change template to the `404.html`
 
 ### Sidebar
+- Sidebar title require `{$snippet.widget-title}` snippet
 - Sidebar content require `{$snippet.widget-content}` snippet
 
 ### Social icons

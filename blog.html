@@ -1,7 +1,7 @@
 {template: inc/header.html}
 
 <header class="header" style="background-image: url('{$bat.theme}/img/blog-bg.jpg');">
-    <div class="container header-container">
+    <div class="container header-container is-flex">
         <h1 class="header-title">{$blog.title}</h1>
         <p class="header-desc">{$blog.desc}</p> 
     </div>
@@ -16,8 +16,8 @@
                     <div class="post-header">
                         <a href="{$value.url}">
                             {if: $value.cover_photo}
-                            <figure>
-                                <img src="{$value.cover_url}">
+                            <figure class="post-figure">
+                                <img src="{$value.cover_url}" alt="{$value.title}">
                             </figure>
                             {/if}
                         </a>
@@ -30,7 +30,7 @@
                             {/if} 
                         </p>
 
-                        <a href="{$value.url}">    
+                        <a href="{$value.url}">
                             <h2 class="post-title">{$value.title}</h2>
                         </a>
                     </div>
@@ -47,22 +47,22 @@
                         <a href="{$value.url}" class="post-read-more">{$lang.blog.readmore}</a>
                     </div>
 
-                </article>   
+                </article>
             {/loop}
 
             <ul class="pager">
                 {if: isset($prev)}
-                <li>
-                    <a href="{$prev.url}">{$lang.blog.newer}</a>
+                <li class="previous">
+                    <a href="{$prev.url}" class="pager-link">{$lang.blog.newer}</a>
                 </li>
                 {/if}
 
                 {if: isset($next)}
-                <li>
-                    <a href="{$next.url}">{$lang.blog.older}</a>
+                <li class="next">
+                    <a href="{$next.url}" class="pager-link">{$lang.blog.older}</a>
                 </li>
                 {/if}
-            </ul> 
+            </ul>
             </div>  
         </div>
         <div class="col-md-4">

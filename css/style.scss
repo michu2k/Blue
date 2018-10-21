@@ -2,7 +2,7 @@
 
 /*!
  *  Author: Michał Strumpf
- *  Version: 2.3.0
+ *  Version: 2.3.1
  *  Template Name: Blue
  */
 
@@ -18,10 +18,10 @@ $font-family: ('Open Sans', 'Arial' , sans-serif);
 $first-weight: 700;
 $second-weight: 300;
 
-//  Mixin to create CSS effects with prefixes
-//  [String] $property - Css property name
-//  [All] $value - Value
-//  [List] $prefixes - Prefixes
+// Mixin to create CSS effects with prefixes
+// [String] $property - Css property name
+// [All] $value - Value
+// [List] $prefixes - Prefixes
 @mixin effect($param, $value, $prefixes: ()) {
     @each $prefix in $prefixes {
         -#{$prefix}-#{$param}: $value;
@@ -115,10 +115,6 @@ img {
 
     // Navigation header
     .navbar-header {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-
         // Brand
         .navbar-brand {
             font-weight: $first-weight;
@@ -266,9 +262,6 @@ img {
 
     // Container
     .header-container {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
         -webkit-flex-direction: column;
         flex-direction: column;
         -webkit-justify-content: center;
@@ -367,7 +360,7 @@ img {
                 border-radius: 50%;
                 display: inline-block;
 
-                i {
+                span {
                     line-height: 32px;
                     font-size: 14px;
                     color: $blue;
@@ -378,7 +371,7 @@ img {
                 &:hover {
                     border: 1px solid $black;
 
-                    i {
+                    span {
                         color: $black;
                     }
                 }
@@ -512,7 +505,7 @@ form {
 
         // Share buttons
         .post-share {
-            i {
+            span {
                 color: $white;
                 text-align: center;
                 line-height: 30px;
@@ -524,7 +517,6 @@ form {
 
                 &.fa-twitter {background-color: #1da1f2};
                 &.fa-facebook {background-color: #3b5998};
-                &.fa-google-plus {background-color: #dd4b39};
             }   
         }   
 
@@ -570,30 +562,27 @@ form {
 
 /*---------- 8.1 Pagination ----------*/
 .pager {
-    text-align: center;
     border-top: 1px solid $light-grey;
     padding-top: 20px;
     margin-top: 0;
     margin-bottom: 0;
 
-    li {
-        a {
-            font-size: 13px;
-            color: $blue;
-            width: 100%;
-            background: none;
-            padding: 10px;
-            border: 1px solid $blue;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            @include effect(transition, (all .4s ease), ('webkit', 'o'));
+    .pager-link {
+        font-size: 13px;
+        color: $blue;
+        width: 100%;
+        background: none;
+        padding: 10px;
+        border: 1px solid $blue;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        @include effect(transition, (all .3s ease), ('webkit', 'o'));
 
-            &:hover, 
-            &:focus {
-                color: $black;    
-                border: 1px solid $black;
-                background: none;
-            }   
+        &:hover, 
+        &:focus {
+            color: $black;    
+            border: 1px solid $black;
+            background: none;
         }
     }
 }
@@ -602,13 +591,10 @@ form {
 .footer {
     margin-top: 40px;
     height: 100px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-align-items: center;
     align-items: center;
 
-    p {
+    .footer-text {
         color: $dark-grey;
         font-size: 11px; 
         text-align: center;
@@ -681,6 +667,13 @@ form {
 }
 
 /*---------- 13. Others ----------*/
+// Flex class
+.is-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
 // Quote
 blockquote {
     border-top: 1px solid $light-grey;
@@ -721,11 +714,9 @@ textarea {
     
     // Pagination
     .pager {
-        li {
-            a {
-                width: 150px;
-                margin: 0 5px 10px 5px; 
-            }
+        .pager-link {
+            width: 150px;
+            margin: 0;
         }
     }   
 }
